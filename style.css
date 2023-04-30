@@ -44,6 +44,7 @@
     --ff-serif: 'Inter', sans-serif;
 
     --tw: 15px;
+    --hover-clr: hsl(0deg 0% 91%);
 }
 
 *,
@@ -65,7 +66,7 @@ header {
     padding-bottom: 9em;
 }
 
-section{
+section {
     position: relative;
     top: -6em;
 }
@@ -146,6 +147,7 @@ section {
     background: var(--toggle-light);
     width: calc(var(--tw) * 2 + 6px);
     padding: 2px;
+    cursor: pointer;
 }
 
 .toggle>div {
@@ -153,6 +155,7 @@ section {
     border-radius: 50%;
     width: var(--tw);
     aspect-ratio: 1;
+    margin-left: auto;
     transition: transform .25s ease-in-out;
 }
 
@@ -162,7 +165,7 @@ section {
 
 .toggle.dark>div {
     background-color: var(--dark-t-bg);
-    transform: translateX(calc(100% + 2px));
+    transform: translateX(calc(-100% - 2px));
 }
 
 .card {
@@ -170,12 +173,13 @@ section {
     place-items: center;
     text-align: center;
     gap: 1.3em;
-    background-color: var(--card-clr);
+    background: var(--card-clr);
     /* min-width: 150px; */
     border-radius: 10px;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     padding-bottom: 1.3em;
+    cursor: pointer;
 }
 
 
@@ -212,21 +216,31 @@ section {
 }
 
 .card-2 {
+    cursor: pointer;
     background: var(--card-clr);
     padding: 1.3em;
     border-radius: .5rem;
 }
 
+.card:hover,
+.card:focus,
+.card-2:hover,
+.card-2:focus {
+    background: var(--hover-clr);
+}
 
-@media (max-width: 375px) {
-    header{
+
+@media (max-width: 30rem) {
+    header {
         padding-bottom: 4em;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
     }
-    section{
+
+    section {
         top: -2em;
     }
+
     .m-border {
         width: 100%;
         height: 1px;
